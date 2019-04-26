@@ -1,0 +1,32 @@
+{
+  "name": "quest-for-game-dev",
+  "version": "0.1.0",
+  "description": "Game development quest declaration",
+  "main": "index.html",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-rimraf": "^0.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skerwe/quest-for-game-dev.git"
+  },
+  "keywords": [
+    "static-site",
+    "nunjucks",
+    "gulp",
+    "sass"
+  ],
+  "author": "Quintin Henn <quintin.henn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Skerwe/quest-for-game-dev/issues"
+  },
+  "homepage": "https://github.com/Skerwe/quest-for-game-dev#readme"
+}
