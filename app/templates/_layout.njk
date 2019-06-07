@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include "partials/_head.njk" %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+
+  <meta name="msapplication-config" content="browserconfig.xml" />
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <link type="text/plain" rel="author" href="humans.txt" />
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+	<meta name="theme-color" content="#fafafa">
+</head>
 
 <body>
   <!--[if IE]>
@@ -10,7 +30,14 @@
 
   {% block content %}{% endblock %}
 
-  {% include "partials/_end.njk" %}
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
 </body>
 </html>
