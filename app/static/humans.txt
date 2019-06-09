@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Knight Errant: Quintin Henn <quintin.henn@gmail.com>
+    Knight-Errant: Quintin Henn <quintin.henn@gmail.com>
     Site: http://skerwe.web.za
     Twitter: @QuintinHenn
     GitHub: Skerwe
