@@ -21,7 +21,9 @@
     "sassdoc": "^2.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",
@@ -38,5 +40,10 @@
   "bugs": {
     "url": "https://github.com/Skerwe/quest-for-game-dev/issues"
   },
-  "homepage": "https://github.com/Skerwe/quest-for-game-dev#readme"
+  "homepage": "https://github.com/Skerwe/quest-for-game-dev#readme",
+  "browserslist": [
+    "last 2 versions",
+    "> 5%",
+    "Firefox ESR"
+  ]
 }

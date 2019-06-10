@@ -42,9 +42,6 @@ const config = {
 const sassOptions = {
   outputStyle: "expanded"
 };
-const autoprefixerOptions = {
-  browsers: ["last 2 versions", "> 5%", "Firefox ESR"]
-};
 const sassdocOptions = {
   dest: config.styles.docs
 };
@@ -52,7 +49,7 @@ const sassdocOptions = {
 function sassTask() {
   return src(config.styles.main)
     .pipe(sass(sassOptions).on("error", sass.logError))
-    .pipe(autoprefixer(autoprefixerOptions))
+    .pipe(autoprefixer())
     .pipe(dest(config.styles.output))
     .pipe(browserSync.stream());
 }
