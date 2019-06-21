@@ -7,45 +7,39 @@ const nunjucksRender = require('gulp-nunjucks-render');
 const autoprefixer = require('gulp-autoprefixer');
 const sassdoc = require('sassdoc');
 const browserSync = require('browser-sync').create();
-const concat = require('gulp-concat');
 const cssmin = require('gulp-cssmin');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
-const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 
 sass.compiler = require('node-sass');
 
 const path = {
-  input: "app/",
-  output: "dist/",
-  scripts: {
-    input: "app/scripts/*.js",
-    output: "dist/js"
-  },
+  input: 'app/',
+  output: 'dist/',
   styles: {
-    main: "app/scss/main.scss",
-    input: "app/scss/*.scss",
-    output: "dist/css",
-    docs: "dist/sassdoc"
+    main: 'app/scss/main.scss',
+    input: 'app/scss/*.scss',
+    output: 'dist/css',
+    docs: 'dist/sassdoc'
   },
   nunjucks: {
-    pages: "app/pages/**/*.+(html|njk)",
-    templates: "app/templates/**/*.+(html|njk)",
-    data: "./app/data.json"
+    pages: 'app/pages/**/*.+(html|njk)',
+    templates: 'app/templates/**/*.+(html|njk)',
+    data: './app/data.json'
   },
   images: {
-    input: "app/images/**/*",
-    output: "dist/img"
+    input: 'app/images/**/*',
+    output: 'dist/img'
   },
   static: {
-    css: "app/css/*.css",
-    other: "app/static/*"
+    css: 'app/css/*.css',
+    other: 'app/static/*'
   }
 };
 
 const sassOptions = {
-  outputStyle: "expanded"
+  outputStyle: 'expanded'
 };
 const sassdocOptions = {
   dest: path.styles.docs
@@ -62,19 +56,6 @@ function sassTask() {
 
 function sassDocTask() {
   return src(path.styles.input).pipe(sassdoc(sassdocOptions)).resume();
-}
-
-function scriptTask() {
-  return src([
-    'app/scripts/plugins.js',
-    'app/scripts/main.js'
-  ])
-  .pipe(concat({
-    path: 'main.js'
-  }))
-  .pipe(uglify())
-  .pipe(dest(path.scripts.output))
-  .pipe(browserSync.stream());
 }
 
 function nunjucksTask() {
@@ -118,7 +99,6 @@ function copyCssTask() {
 
 function watchTask() {
   watch(path.styles.input, sassTask);
-  watch([path.scripts.input], scriptTask);
   watch([path.nunjucks.pages, path.nunjucks.templates], nunjucksTask);
 }
 
@@ -134,9 +114,8 @@ exports.clean = cleanTask;
 exports.sass = sassTask;
 exports.sassdoc = sassDocTask;
 exports.nunjucks = nunjucksTask;
-exports.scripts = scriptTask;
 exports.imagesmin = imagesMinTask;
 exports.copystatic = series(copyStaticTask, copyCssTask);
-exports.build = series(nunjucksTask, sassTask, copyStaticTask, copyCssTask, scriptTask, imagesMinTask);
-exports.default = series(cleanTask, nunjucksTask, sassTask, sassDocTask, copyStaticTask, copyCssTask, scriptTask, imagesMinTask);
+exports.build = series(nunjucksTask, sassTask, copyStaticTask, copyCssTask, imagesMinTask);
+exports.default = series(cleanTask, nunjucksTask, sassTask, sassDocTask, copyStaticTask, copyCssTask, imagesMinTask);
 exports.serve = parallel(browserSyncTask, watchTask);
