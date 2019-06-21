@@ -1,18 +1,22 @@
-const { src, dest, watch, series, parallel } = require("gulp");
-const data = require("gulp-data");
-const rimraf = require("gulp-rimraf");
-const nunjucksRender = require("gulp-nunjucks-render");
-const autoprefixer = require("gulp-autoprefixer");
-const sassdoc = require("sassdoc");
-const browserSync = require("browser-sync").create();
-const concat = require("gulp-concat");
-const imagemin = require("gulp-imagemin");
-const pngquant = require("imagemin-pngquant");
-const sass = require("gulp-sass");
+'use strict';
 
-sass.compiler = require("node-sass");
+const { src, dest, watch, series, parallel } = require('gulp');
+const data = require('gulp-data');
+const rimraf = require('gulp-rimraf');
+const nunjucksRender = require('gulp-nunjucks-render');
+const autoprefixer = require('gulp-autoprefixer');
+const sassdoc = require('sassdoc');
+const browserSync = require('browser-sync').create();
+const concat = require('gulp-concat');
+const cssmin = require('gulp-cssmin');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+const uglify = require('gulp-uglify');
+const sass = require('gulp-sass');
 
-const config = {
+sass.compiler = require('node-sass');
+
+const path = {
   input: "app/",
   output: "dist/",
   scripts: {
@@ -27,7 +31,8 @@ const config = {
   },
   nunjucks: {
     pages: "app/pages/**/*.+(html|njk)",
-    templates: "app/templates/**/*.+(html|njk)"
+    templates: "app/templates/**/*.+(html|njk)",
+    data: "./app/data.json"
   },
   images: {
     input: "app/images/**/*",
@@ -43,80 +48,84 @@ const sassOptions = {
   outputStyle: "expanded"
 };
 const sassdocOptions = {
-  dest: config.styles.docs
+  dest: path.styles.docs
 };
 
 function sassTask() {
-  return src(config.styles.main)
-    .pipe(sass(sassOptions).on("error", sass.logError))
+  return src(path.styles.main)
+    .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(dest(config.styles.output))
+    .pipe(cssmin())
+    .pipe(dest(path.styles.output))
     .pipe(browserSync.stream());
 }
 
 function sassDocTask() {
-  return src(config.styles.input).pipe(sassdoc(sassdocOptions)).resume();
+  return src(path.styles.input).pipe(sassdoc(sassdocOptions)).resume();
 }
 
 function scriptTask() {
-  return src(
-    ["app/scripts/plugins.js", "app/scripts/main.js"]
-  ).pipe(concat({
-    path: "main.js"
+  return src([
+    'app/scripts/plugins.js',
+    'app/scripts/main.js'
+  ])
+  .pipe(concat({
+    path: 'main.js'
   }))
-  .pipe(browserSync.reload({
-    stream: true
-  }))
-  .pipe(dest(config.scripts.output));
+  .pipe(uglify())
+  .pipe(dest(path.scripts.output))
+  .pipe(browserSync.stream());
 }
 
 function nunjucksTask() {
-  return src(config.nunjucks.pages)
+  return src(path.nunjucks.pages)
     .pipe(data(function () {
-      return require('./app/data.json')
+      return require(path.nunjucks.data)
     }))
     .pipe(nunjucksRender({
-      path: ["app/templates"]
-    })).pipe(
-      dest(config.output)
-    );
+      path: ['app/templates']
+    }))
+    .pipe(dest(path.output))
+    .pipe(browserSync.stream());
 }
 
 function imagesMinTask() {
-  return src(config.images.input)
+  return src(path.images.input)
   .pipe(imagemin({
     progressive: true,
     svgoPlugins: [{removeViewBox: false}],
     use: [pngquant()]
   }))
-  .pipe(dest(config.images.output));
+  .pipe(dest(path.images.output));
 }
 
 function cleanTask() {
-  return src(config.output, {
+  return src(path.output, {
     read: false,
     allowEmpty: true
   }).pipe(rimraf());
 }
 
 function copyStaticTask() {
-  return src(config.static.other).pipe(dest(config.output));
+  return src(path.static.other).pipe(dest(path.output));
 }
 
 function copyCssTask() {
-  return src(config.static.css).pipe(dest(config.styles.output));
+  return src(path.static.css)
+  .pipe(cssmin({keepSpecialComments : 0}))
+  .pipe(dest(path.styles.output));
 }
 
 function watchTask() {
-  watch(config.styles.input, sassTask);
-  watch([config.scripts.input], scriptTask).on('change', browserSync.reload);
-  watch([config.nunjucks.pages, config.nunjucks.templates], nunjucksTask).on('change', browserSync.reload);
+  watch(path.styles.input, sassTask);
+  watch([path.scripts.input], scriptTask);
+  watch([path.nunjucks.pages, path.nunjucks.templates], nunjucksTask);
 }
 
 function browserSyncTask() {
   browserSync.init({
     server: {
-      baseDir: config.output
+      baseDir: path.output
     }
   });
 }
