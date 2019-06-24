@@ -1,6 +1,165 @@
 {% extends "_layout.njk" %}
 
 {% block content %}
-<h1>This is the index page</h1>
-<img src="img/humanstxt-isolated-blank.gif" alt="Humans.txt">
+  <main>
+
+    <section class="hero has-background-black">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-1 has-text-white">
+            Quest for Game Dev
+          </h1>
+          <h2 class="subtitle">
+            So You Want to Be a Hero
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+    <div class="container">
+    <p>
+    Embark on a quest to learn game development. Follow along with the tutorials and have a look at the code. From not knowing anything at all to publishing a full game as an indie game dev hero.
+    </p>
+    <h2 class="title is-size-4">So where do I start?</h2>
+    <p>
+    Start small. Learn basic game development techniques by building a very small games. Here is a list of progressively more difficult game projects that we are going to work on during our game development quest. Each game project will build on top of the previous techniques to grow our knowledge in game development.
+    </p>
+    <aside class="aside">
+    <h3 class="is-size-5">Resources</h3>
+    <a target="_blank" title="Article on GameFromScratch.com" href="https://www.gamefromscratch.com/post/2013/08/01/Just-starting-out-what-games-should-I-make.aspx">
+    Just starting out, what games should I make?</a>
+    </aside>
+
+    <h2 class="title is-size-4">Warning for the Knight-errant</h2>
+    <p>
+    The difficulty of each project on this list changes depending on whether you use a game framework or an engine. For example building the game pong from scratch in a programming language is much more intimidating than to use for example the Construct game engine, which will only take about 10 minutes to create.
+    </p>
+    <p>
+    These projects assume you are using a game framework and have some knowledge of programming. But not to worry, on our quest for game dev we will explore frameworks as well as angines. The main quest is to complete each project progressively using only one framework. Side quests will include developing the same game in different languages, frameworks and engines.
+    </p>
+    <aside class="aside">
+    <h3 class="is-size-5">knowledge</h3>
+    difference between framework and egine
+    </aside>
+    </div>
+    </section>
+
+    <section class="section has-background-light">
+      <div class="container">
+
+        <article class="media notification is-info">
+          <figure class="media-left">
+            <span class="icon is-medium">
+              <i class="fab fa-2x fa-css3-alt"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h3 class="title is-size-4">Text Adventure</h3>
+              <p class="is-size-5">
+                Bulma is a modern CSS framework from @jgthms, based on Flexbox. Using Bulma, we can describe our website's design using just classes.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="media notification is-info">
+          <figure class="media-left">
+            <span class="icon is-medium">
+              <i class="fab fa-2x fa-css3-alt"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h3 class="title is-size-4">Pong</h3>
+              <p class="is-size-5">
+                Bulma is a modern CSS framework from @jgthms, based on Flexbox. Using Bulma, we can describe our website's design using just classes.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="media notification is-info">
+          <figure class="media-left">
+            <span class="icon is-medium">
+              <i class="fab fa-2x fa-css3-alt"></i>
+            </span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h3 class="title is-size-4">Tetris</h3>
+              <p class="is-size-5">
+                Bulma is a modern CSS framework from @jgthms, based on Flexbox. Using Bulma, we can describe our website's design using just classes.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <article class="media notification has-background-white">
+              <figure class="media-left">
+                <span class="icon has-text-primary">
+                  <i class="fas fa-lg fa-warehouse"></i>
+                </span>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <h3 class="title is-size-4">Text Adventure</h3>
+                  <p class="is-size-5">
+                    Bulma is a modern CSS framework from @jgthms, based on Flexbox. Using Bulma, we can describe our website's design using just classes.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="column">
+            <article class="media notification has-background-white">
+              <figure class="media-left">
+                <span class="icon has-text-danger">
+                  <i class="fas fa-lg fa-cubes"></i>
+                </span>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <h3 class="title is-size-4">Pong</h3>
+                  <p class="is-size-5">
+                    Bulma is a modern CSS framework from @jgthms, based on Flexbox. Using Bulma, we can describe our website's design using just classes.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="column">
+            <article class="media notification has-background-white">
+              <figure class="media-left">
+                <span class="icon has-text-grey">
+                  <i class="fas fa-lg fa-cogs"></i>
+                </span>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <h3 class="title is-size-4">Tetris</h3>
+                  <p class="is-size-5">
+                    Bulma is a modern CSS framework from @jgthms, based on Flexbox. Using Bulma, we can describe our website's design using just classes.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 {% endblock %}
