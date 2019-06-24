@@ -100,6 +100,7 @@ function copyCssTask() {
 function watchTask() {
   watch(path.styles.input, sassTask);
   watch([path.nunjucks.pages, path.nunjucks.templates], nunjucksTask);
+  watch(path.images.input, imagesMinTask).on('change', browserSync.reload);
 }
 
 function browserSyncTask() {
