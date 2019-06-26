@@ -2,8 +2,4 @@
    Author's custom styles
    ========================================================================== */
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import "../../node_modules/bulma/bulma.sass";
