@@ -3,3 +3,22 @@
    ========================================================================== */
 
 @import "../../node_modules/bulma/bulma.sass";
+
+.padding-left-0 {
+  padding-left: 0;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+@media (max-width: 769px) {
+	:root {
+		font-size: 90%;
+  }
+
+  .padding-left-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
