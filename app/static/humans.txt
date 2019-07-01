@@ -15,6 +15,6 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, Nunjucks, Gulp
+    CSS3, HTML5, Nunjucks, Gulp, Bulma, Font-Awesome
     Apache Server Configs, Normalize.css
     Visual Studio Code, Cmder, Git, GitHub
