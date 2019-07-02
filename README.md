@@ -1,5 +1,7 @@
 # Quest for Game Dev: So You Want to Be a Hero
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Skerwe/quest-for-game-dev.svg)](https://greenkeeper.io/)
+
 [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 ## License
