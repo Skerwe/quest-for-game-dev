@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - v11
   - v10
-- v8
+  - v8
 deploy:
   provider: pages
   skip_cleanup: true
