@@ -1,0 +1,20 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Knight-Errant: Quintin Henn <quintin.henn@gmail.com>
+    Site: http://skerwe.web.za
+    Twitter: @QuintinHenn
+    GitHub: Skerwe
+    Location: Pretoria, South Africa
+
+# THANKS
+
+    <name> <url>
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, Nunjucks, Gulp, Bulma, Font-Awesome
+    Apache Server Configs, Normalize.css
+    Visual Studio Code, Cmder, Git, GitHub
