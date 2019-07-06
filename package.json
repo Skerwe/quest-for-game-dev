@@ -28,7 +28,7 @@
     "build": "gulp",
     "prestart": "gulp build",
     "start": "gulp serve",
-    "test": "testcafe chrome,firefox tests/ --app \"http-server ./dist -s\""
+    "test": "testcafe chrome,firefox tests/index.test.js --app \"node test/server.js\""
   },
   "repository": {
     "type": "git",
