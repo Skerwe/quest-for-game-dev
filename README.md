@@ -1,6 +1,6 @@
 # Quest for Game Dev: So You Want to Be a Hero
 
-[![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Skerwe/quest-for-game-dev.svg) [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
  Learn to develop indie games in Java, Python and JavaScript. Start with a text adventure, and progresseively increase the difficulty and scope to develop a block breaker, platformer and RPG game.
 
