@@ -2,6 +2,8 @@
 
 [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
+ Learn to develop indie games in Java, Python and JavaScript. Start with a text adventure, and progresseively increase the difficulty and scope to develop a block breaker, platformer and RPG game.
+
 ## License
 
 MIT © [Quintin Henn](http://skerwe.web.za)
