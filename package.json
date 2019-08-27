@@ -13,7 +13,7 @@
     "gulp-autoprefixer": "^7.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-data": "^1.3.1",
-    "gulp-imagemin": "^6.0.0",
+    "gulp-imagemin": "^6.1.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-rimraf": "^1.0.0",
     "gulp-sass": "^4.0.2",
@@ -41,7 +41,7 @@
     "gulp",
     "sass"
   ],
-  "author": "Quintin Henn <quintin.henn@gmail.com>",
+  "author": "Quintin Henn <quintin.henn@gmail.com> (http://skerwe.web.za)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Skerwe/quest-for-game-dev/issues"
