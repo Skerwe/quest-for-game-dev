@@ -1,16 +1,44 @@
 {% block header %}
-  <header id="page-header">
-    <section class="hero has-background-black">
-      <div class="hero-body">
+  <header id="page-header" class="hero is-medium has-background-black">
+
+    <div class="hero-head">
+
+      <nav class="navbar is-fixed-top is-transparent has-background-black" role="navigation" aria-label="main navigation">
         <div class="container">
-          <h1 class="title is-1 has-text-white">
-            Quest for Game Dev
-          </h1>
-          <h2 class="subtitle">
-            So You Want to Be a Hero
-          </h2>
+          <div class="navbar-brand">
+            <a class="navbar-item has-text-white is-hidden">Quest for Game Dev</a>
+            <span class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div class="navbar-menu" id="navbarMenu">
+            <div class="navbar-end">
+              <a class="navbar-item" href="resources.html" title="Learn more about game development">
+                Resources
+              </a>
+              <a class="navbar-item" href="https://github.com/Skerwe/quest-for-game-dev" title="Have a look at the source code">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
         </div>
+      </nav>
+    </div>
+
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-size-1-tablet has-text-white">
+          Quest for Game Dev
+        </h1>
+        <h2 class="subtitle">
+          So You Want to Be a Hero
+        </h2>
       </div>
-    </section>
+    </div>
   </header>
 {% endblock %}
