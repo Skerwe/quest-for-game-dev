@@ -1,23 +1,26 @@
 {
   "name": "quest-for-game-dev",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Quest for Game Dev: So You Want to Be a Hero",
   "main": "Gulpfile.js",
   "private": true,
   "dependencies": {
-    "bulma": "^0.7.5"
+    "bulma": "^0.7.5",
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
     "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
     "gulp-data": "^1.3.1",
-    "gulp-imagemin": "^6.0.0",
+    "gulp-imagemin": "^6.1.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-rimraf": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
     "html5-boilerplate": "^7.2.0",
     "http-server": "^0.11.1",
     "imagemin-pngquant": "^8.0.0",
@@ -41,7 +44,7 @@
     "gulp",
     "sass"
   ],
-  "author": "Quintin Henn <quintin.henn@gmail.com>",
+  "author": "Quintin Henn <quintin.henn@gmail.com> (http://skerwe.web.za)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Skerwe/quest-for-game-dev/issues"
