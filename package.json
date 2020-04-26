@@ -32,7 +32,7 @@
     "build": "gulp",
     "prestart": "gulp build",
     "start": "gulp serve",
-    "test": "snyk test && testcafe chrome,firefox tests/ --app \"http-server ./dist -s\""
+    "test": "snyk test && testcafe chrome,firefox tests/index-test.js --app \"http-server ./dist -s\""
   },
   "repository": {
     "type": "git",
